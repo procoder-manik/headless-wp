@@ -1,73 +1,179 @@
+# 🚀 Headless WordPress React Frontend
 
-# This is first Headless Wordpress project live link: https://headless-wp-nine.vercel.app/
-# Wordpress Server Link: https://demo.manikhossain.in/
-# Getting Started with Create React App
+A modern, high-performance decoupled front-end application built with **React** and styled using **Tailwind CSS**, consuming WordPress purely as a Headless CMS via the **WordPress REST API**.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+## 🌐 Live Demos & Endpoints
 
-In the project directory, you can run:
+| Service | Link |
+| :--- | :--- |
+| **Production Frontend (Vercel)** | [https://headless-wp-nine.vercel.app/](https://headless-wp-nine.vercel.app/) |
+| **WordPress Backend / API Server** | [https://demo.manikhossain.in/](https://demo.manikhossain.in/) |
+| **REST API Base URL** | `https://demo.manikhossain.in/wp-json/wp/v2/` |
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## ✨ Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- ⚡ **Decoupled Headless Architecture**: WordPress backend handles content management, while React delivers an interactive Single Page Application (SPA).
+- 🎨 **Utility-First Styling**: Styled with **Tailwind CSS** for responsive design.
+- 📡 **REST API Integration**: Dynamic content fetching for posts, media, categories, and custom fields.
+- 🚀 **Performance Optimized**: Component-level loading states, structured component trees, and client-side routing.
+- ☁️ **Cloud Native Deployment**: Automated continuous deployment configured for Vercel.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🛠️ Tech Stack
 
-### `npm run build`
+- **Frontend Framework:** React 18+ (Create React App)
+- **Styling:** Tailwind CSS, PostCSS, Autoprefixer
+- **HTTP Client:** Fetch API / Axios
+- **Backend CMS:** WordPress (Self-Hosted on Apache/Nginx)
+- **Deployment:** Vercel (Frontend), Custom Hosting (WordPress backend)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📁 Project Structure
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```text
+headless-wp/
+├── frontend/                     # React Single-Page Application
+│   ├── public/                   # Static assets & index.html
+│   ├── src/
+│   │   ├── components/           # Reusable UI components (Navbar, Footer, Card, etc.)
+│   │   ├── services/             # API handlers (WordPress REST API fetchers)
+│   │   ├── App.css               # Global application styles
+│   │   ├── App.js                # Main router & root application wrapper
+│   │   ├── App.test.js           # Unit test definitions
+│   │   ├── index.css             # Tailwind CSS directives (@tailwind base/components/utilities)
+│   │   ├── index.js              # React DOM render entry point
+│   │   └── setupTests.js         # Jest and React Testing Library setup
+│   ├── .env                      # Local environment variables
+│   ├── .gitignore                # Git untracked pattern definitions
+│   ├── package.json              # Project dependencies, scripts, and versions
+│   ├── postcss.config.js         # PostCSS configuration for Tailwind
+│   └── tailwind.config.js        # Tailwind CSS customizations & themes
+└── README.md                     # Root project documentation
+```
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## ⚙️ Getting Started
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Follow these steps to run the frontend locally:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 1. Prerequisites
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- [Node.js](https://nodejs.org/) (version `18.x` or later recommended)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+- Accessible WordPress REST API endpoint
 
-## Learn More
+### 2. Clone the Repository
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+git clone https://github.com/<your-username>/<your-repo-name>.git
+cd <your-repo-name>/frontend
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 3. Configure Environment Variables
 
-### Code Splitting
+Create a `.env` file in the root of the `frontend` folder:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```env
+REACT_APP_WP_API_URL=https://demo.manikhossain.in/wp-json/wp/v2
+```
 
-### Analyzing the Bundle Size
+### 4. Install Dependencies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+npm install
+```
 
-### Making a Progressive Web App
+> **Note:** If you experience peer dependency warnings or conflicts, run:
+> ```bash
+> npm install --legacy-peer-deps
+> ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### 5. Launch Development Server
 
-### Advanced Configuration
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+The application will start and open automatically at [http://localhost:3000](http://localhost:3000).
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 📜 Available Scripts
 
-### `npm run build` fails to minify
+In the `frontend` directory, you can execute:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+| Command | Action |
+| :--- | :--- |
+| `npm start` | Runs the app in development mode on [http://localhost:3000](http://localhost:3000) with hot-reloading. |
+| `npm test` | Launches the interactive test runner. |
+| `npm run build` | Compiles a production-ready, minified build to the `build/` directory. |
+| `npm run eject` | Copies build configurations and dependencies directly into your project (one-way operation). |
+
+---
+
+## 🔌 API Integration Guide
+
+This frontend connects to the WordPress REST API to ingest content dynamically. Example request to retrieve posts:
+
+```javascript
+// Example service call
+const API_URL = process.env.REACT_APP_WP_API_URL || 'https://demo.manikhossain.in/wp-json/wp/v2';
+
+export const fetchPosts = async () => {
+  try {
+    const response = await fetch(`${API_URL}/posts?_embed`);
+    if (!response.ok) throw new Error('Failed to fetch posts');
+    return await response.json();
+  } catch (error) {
+    console.error('API Error:', error);
+    return [];
+  }
+};
+```
+
+> **WordPress Setup Tip:** Ensure **CORS** headers are enabled on your WordPress server if you encounter origin policy blocks when querying from localhost.
+
+---
+
+## 🗺️ Project Roadmap
+
+- [x] Decoupled WordPress backend and React frontend connection
+- [x] Dynamic REST API post fetching with embedded featured images
+- [x] Responsive layout using Tailwind CSS
+- [x] Continuous deployment pipeline on Vercel
+- [ ] **Phase 2:** Implement React Router for dedicated single-post routes (`/posts/:id` or `/posts/:slug`)
+- [ ] **Phase 3:** Integrate WPGraphQL / Apollo Client for query optimization
+- [ ] **Phase 4:** Pagination, category filtering, and live search functionality
+- [ ] **Phase 5:** Progressive Web App (PWA) offline caching support
+
+---
+
+## 🚀 Deployment
+
+### Deploying to Vercel
+
+1. Push your repository to GitHub.
+2. Import the repository into [Vercel](https://vercel.com).
+3. Set the **Root Directory** to `frontend`.
+4. Add the environment variable `REACT_APP_WP_API_URL` with value `https://demo.manikhossain.in/wp-json/wp/v2`.
+5. Click **Deploy**.
+
+---
+
+## 👤 Author
+
+- **Live Site:** [headless-wp-nine.vercel.app](https://headless-wp-nine.vercel.app/)
+- **Backend Admin:** [demo.manikhossain.in](https://demo.manikhossain.in/)
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
